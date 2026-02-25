@@ -10,6 +10,7 @@ class LessonsPage:
         self.fullscreen_btn = (By.CSS_SELECTOR, '#app > div > div.videolesson > div > div:nth-child(2) > div > div:nth-child(3) > div.video-player-proweb > div > div.video-player-proweb__controlls > div.video-player-proweb__controllers > div.video-player-proweb__controllers-right > button:nth-child(3)')
         self.play_btn = (By.CSS_SELECTOR, '#app > div > div.videolesson > div > div:nth-child(2) > div > div:nth-child(3) > div.video-player-proweb > div > div.video-player-proweb__controlls > div.video-player-proweb__controllers > div.video-player-proweb__controllers-left > button')
         self.fullscreen_exit = (By.CSS_SELECTOR, '#app > div > div.videolesson > div > div:nth-child(2) > div > div:nth-child(3) > div.video-player-proweb > div > div.video-player-proweb__controlls > div.video-player-proweb__controllers > div.video-player-proweb__controllers-right > button:nth-child(3)')
+        self.back_btn = (By.CSS_SELECTOR, '#app > div > div.videolesson > div > div:nth-child(2) > div > div.back-to-less.back-to-less-lesson > div')
 
     def click_lessons_btn(self):
         wait = WebDriverWait(self.driver, 10)
@@ -30,3 +31,7 @@ class LessonsPage:
     def click_fullscreen_exit(self):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.element_to_be_clickable(self.fullscreen_exit)).click()
+
+    def click_back_btn(self):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.element_to_be_clickable(self.back_btn)).click()

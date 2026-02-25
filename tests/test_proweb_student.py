@@ -7,6 +7,7 @@ import allure
 from pages.auth_page import AuthPage
 from pages.home_page import HomePage
 from pages.lessons_page import LessonsPage
+from pages.homework_page import HomeworkPage
 
 
 def test_auth_chrome(driver_chrome):
@@ -52,6 +53,20 @@ def test_auth_chrome(driver_chrome):
     lessons_page.click_play_btn()
     time.sleep(10)
     lessons_page.click_fullscreen_exit()
+    time.sleep(2)
+    lessons_page.click_back_btn()
+    time.sleep(2)
+
+    homework_page = HomeworkPage(driver_chrome)
+    homework_page.open_homework_page()
+    time.sleep(2)
+    homework_page.open_homework_autotest()
+    time.sleep(2)
+    homework_page.click_task_btn()
+    time.sleep(2)
+    homework_page.write_comment('Test Comment')
+    time.sleep(2)
+    homework_page.click_send_btn()
     time.sleep(2)
 
     home_page.click_profile_icon()
@@ -118,6 +133,20 @@ def test_auth_firefox(driver_firefox):
     time.sleep(10)
     lessons_page.click_fullscreen_exit()
     time.sleep(2)
+    lessons_page.click_back_btn()
+    time.sleep(2)
+
+    homework_page = HomeworkPage(driver_firefox)
+    homework_page.open_homework_page()
+    time.sleep(2)
+    homework_page.open_homework_autotest()
+    time.sleep(2)
+    homework_page.click_task_btn()
+    time.sleep(2)
+    homework_page.write_comment('Test Comment')
+    time.sleep(2)
+    homework_page.click_send_btn()
+    time.sleep(2)
 
     home_page.click_profile_icon()
     time.sleep(2)
@@ -170,6 +199,20 @@ def test_auth_edge(driver_edge):
     lessons_page.click_play_btn()
     time.sleep(10)
     lessons_page.click_fullscreen_exit()
+    time.sleep(2)
+    lessons_page.click_back_btn()
+    time.sleep(2)
+
+    homework_page = HomeworkPage(driver_edge)
+    homework_page.open_homework_page()
+    time.sleep(2)
+    homework_page.open_homework_autotest()
+    time.sleep(2)
+    homework_page.click_task_btn()
+    time.sleep(2)
+    homework_page.write_comment('Test Comment')
+    time.sleep(2)
+    homework_page.click_send_btn()
     time.sleep(2)
 
     home_page.click_profile_icon()
